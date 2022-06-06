@@ -1,0 +1,18 @@
+  public static void takeScreenshot(IWebDriver driver)
+        {
+           .SaveAsFile(@"C:\Users\shanthi\Desktop\CompetitionTrial\Screenshot\Test.png" + DateTime.Now.ToString("dd-MM-yyyy HH mm ss"), ScreenshotImageFormat.Png);
+            driver.Quit();
+        }
+
+
+
+
+ //*[@id="listing-management-section"]/div[2]/div[1]/div[1]/table/tbody/tr[1]/td[8]/div/button[2]/i
+
+
+
+
+//*[@id="listing-management-section"]/div[2]/div[1]/div[1]/table/tbody/tr/td[8]/div/button[3]/i
+
+
+ 
