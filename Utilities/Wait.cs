@@ -10,8 +10,6 @@ namespace CompetitionTasks.Utilities
 {
     internal class Wait
     {
-
-
         public static void WaitToBeClickable(IWebDriver driver, String locator, String locatorValue, int seconds)
         {
 
