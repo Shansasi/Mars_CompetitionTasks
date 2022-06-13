@@ -109,7 +109,6 @@ namespace CompetitionTasks.Pages
         //deleting
         public void deleteSteps(IWebDriver driver, string projectpath)
         {
-
             Thread.Sleep(3000);
             IWebElement deleteButton = driver.FindElement(By.XPath("//*[@id='listing-management-section']/div[2]/div[1]/div[1]/table/tbody/tr/td[8]/div/button[3]/i"));
             deleteButton.Click();
