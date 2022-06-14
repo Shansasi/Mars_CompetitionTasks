@@ -68,13 +68,14 @@ namespace CompetitionTasks.Pages
             IWebElement locationTypeRadioButton = driver.FindElement(By.XPath("//*[@id='service-listing-section']/div[2]/div/form/div[6]/div[2]/div/div[2]/div/input"));
             locationTypeRadioButton.Click();
             //Wait.WaitToBeClickable(driver, "XPath", "//*[@id='service-listing-section']/div[2]/div/form/div[7]/div[2]/div/div[1]/div[4]/input", 3);
-            Thread.Sleep(2000);
+            Thread.Sleep(2000);            
+
             //adding end date
             IWebElement endDate = driver.FindElement(By.XPath("//*[@id='service-listing-section']/div[2]/div/form/div[7]/div[2]/div/div[1]/div[4]/input"));
-            string endDateText = ExcelOperations.ReadData(1, "Start Date");
+            string endDateText = ExcelOperations.ReadData(1, "End Date");
             endDate.SendKeys(endDateText);
             Thread.Sleep(2000);
-            endDate.Click();
+        //endDate.Click();
             // Wait.WaitToBeClickable(driver, "XPath", "//*[@id='service-listing-section']/div[2]/div/form/div[7]/div[2]/div/div[2]/div[1]/div/input", 3);
             Thread.Sleep(3000);
             IWebElement checkBoxDates = driver.FindElement(By.XPath("//*[@id='service-listing-section']/div[2]/div/form/div[7]/div[2]/div/div[2]/div[1]/div/input"));
@@ -95,9 +96,11 @@ namespace CompetitionTasks.Pages
             // workUploadButton.SendKeys(projectPath+ @"\work sample\Updated - Mars(QA)-CompetitionTask.docx");
 
             //option 2
+            Console.WriteLine(projectPath + @"work sample\Updated - Mars(QA)-CompetitionTask.docx");
             AutoItX3 autoIt = new AutoItX3();
             autoIt.WinActivate("Open");
-            autoIt.Send(projectPath+ @"\work sample\Updated - Mars(QA)-CompetitionTask.docx"); 
+            Thread.Sleep(1000);
+            autoIt.Send(projectPath+ @"work sample\Updated - Mars(QA)-CompetitionTask.docx"); //work.txt
             Thread.Sleep(1000); //1000 ms
             autoIt.Send(@"{Enter}");
 
