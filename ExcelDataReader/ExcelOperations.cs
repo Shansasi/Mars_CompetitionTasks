@@ -59,11 +59,11 @@ namespace CompetitionTasks
             {
                 try
                 {
-                    //Retriving Data using LINQ to reduce much of iterations
+                //Retriving Data using LINQ to reduce much of iterations
 
-                    string data = (from colData in dataCol
-                                   where colData.colName == columnName && colData.rowNumber == rowNumber
-                                   select colData.colValue).SingleOrDefault();
+                string data = (from colData in dataCol
+                               where colData.colName == columnName && colData.rowNumber == rowNumber
+                               select colData.colValue).FirstOrDefault(); //.SingleOrDefault();
 
                     // retrieving data through lambda
                     //var datas = dataCol.Where(x => x.colName == columnName && x.rowNumber == rowNumber).SingleOrDefault().colValue;
@@ -89,7 +89,7 @@ namespace CompetitionTasks
                 for (int row = 0; row < table.Rows.Count; row++)
                 {
                     Datacollection data;
-
+                //dataCol.Clear();
                     //Console.WriteLine("Row Number is " + (row + 1));
                     for (int col = 0; col < table.Columns.Count; col++)
                     {

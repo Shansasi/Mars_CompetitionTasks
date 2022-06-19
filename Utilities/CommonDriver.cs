@@ -20,6 +20,7 @@ namespace CompetitionTasks.Utilities
         public static string ScreenshotFileName;
         public static FileStream stream;
         public static string projectPath;
+        public static IJavaScriptExecutor js;
 
         [OneTimeSetUp]
 
@@ -42,6 +43,9 @@ namespace CompetitionTasks.Utilities
             //open chrome
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(30);
+
+            js = (IJavaScriptExecutor) driver;
 
             //Login page object initialization and definition
             LoginPage loginPageObj = new LoginPage();
@@ -55,8 +59,6 @@ namespace CompetitionTasks.Utilities
             driver.Quit();
             extent.Flush();
         }
-
-
     }
 
 

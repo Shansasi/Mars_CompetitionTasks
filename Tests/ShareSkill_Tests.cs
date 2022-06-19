@@ -40,8 +40,7 @@ namespace CompetitionTasks.Pages
             shareSkillPageObj.ShareSkillSteps(driver, projectPath);
             test.Log(Status.Info, "shareskill details saved");
             test.Log(Status.Pass, "Test passed");
-
-
+            ExcelOperations.ClearData();
 
         }
         [Test, Order(3)]

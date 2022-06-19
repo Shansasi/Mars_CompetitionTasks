@@ -16,7 +16,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace CompetitionTasks.Pages
 {
-    public class ShareSkillPage
+    public class ShareSkillPage : CommonDriver
     {
         public void ShareSkillSteps(IWebDriver driver,string projectPath)
         {
@@ -41,6 +41,7 @@ namespace CompetitionTasks.Pages
             descriptionTextBox.SendKeys(description);
 
             //adding category
+            js.ExecuteScript("window.scrollBy(0,200)");
             IWebElement categoryDropdown = driver.FindElement(By.Name("categoryId"));
             categoryDropdown.Click();
             SelectElement categoryselect = new SelectElement(categoryDropdown);

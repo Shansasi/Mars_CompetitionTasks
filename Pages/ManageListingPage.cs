@@ -17,9 +17,9 @@ namespace CompetitionTasks.Pages
 
         public void EditingSteps(IWebDriver driver,string projectpath)
         {
-          //  Thread.Sleep(5000);
-           // IWebElement manageListingIcon = driver.FindElement(By.XPath("//*[@id='service-detail-section']/section[1]/div/a[3]"));
-          //  manageListingIcon.Click();
+            //  Thread.Sleep(5000);
+            IWebElement manageListingIcon = driver.FindElement(By.PartialLinkText("Manage Listings")); // ("//*[@id='service-detail-section']/section[1]/div/a[3]"));
+            manageListingIcon.Click();
             //Editing
             Thread.Sleep(5000);
             IWebElement edit = driver.FindElement(By.XPath("//*[@id='listing-management-section']/div[2]/div[1]/div[1]/table/tbody/tr[1]/td[8]/div/button[2]/i"));
@@ -52,7 +52,7 @@ namespace CompetitionTasks.Pages
             IWebElement subcategory = driver.FindElement(By.XPath("//*[@id='service-listing-section']/div[2]/div/form/div[3]/div[2]/div/div[2]/div[1]/select"));
             subcategory.Click();
             SelectElement subcategorySelect= new SelectElement(subcategory);
-            subcategorySelect.SelectByText(ExcelOperations.ReadData(1, "Subcatogry"));
+            subcategorySelect.SelectByText(ExcelOperations.ReadData(1, "Subcategory"));
 
            // IWebElement logoCategory = driver.FindElement(By.XPath("//*[@id='service-listing-section']/div[2]/div/form/div[3]/div[2]/div/div[2]/div[1]/select/option[2]"));
             //logoCategory.Click();
@@ -117,7 +117,7 @@ namespace CompetitionTasks.Pages
             popupConfirmButton.Click();
 
             IWebElement deleteCheck = driver.FindElement(By.XPath("//*[@id='listing-management-section']/div[2]/div[1]/div[1]/table/thead/tr/th[5]"));
-          //  Assert.That(deleteCheck.Text == "Service Type", " deleted successfully");
+            Assert.That(deleteCheck.Text == "Service Type", " deleted successfully");
         }
 
     }
